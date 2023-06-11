@@ -5,6 +5,7 @@ feed = NYCTFeed("A", api_key="tUVO9eM8wV2nQuwSsWIer23kedIlYHwD3PM7ZHqc")
 #print(type(feed.trips[0]))
 #train = feed.trips[0]
 
+
 for i in range(20):
     if feed.trips[i].direction == "N":
         train = feed.trips[i]

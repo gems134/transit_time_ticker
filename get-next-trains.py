@@ -10,10 +10,15 @@ a_trains = feed.filter_trips(line_id="A", travel_direction="S", headed_for_stop_
 #Iterates through first 2 trains to find their arrival times for my stop, then calculates the time to arrival at my stop
 ### Intermittently pulling train arrival times which are much sooner than expected
 for i in range(2):
-    for j in range(4):
-        if a_trains[i].stop_time_updates[j].stop_id == "A06S":
-            print(a_trains[i].stop_time_updates[j].stop_id)
 
-            print(a_trains[i].stop_time_updates[j].arrival)
+    for j in range(4):
+
+        #Assigns (train [i] stop [j]) to variable this_train for easier reference in following checks
+        this_train = a_trains[i].stop_time_updates[j]
+
+        if this_train.stop_id == "A06S":
+            print(this_train.stop_id)
+            print(str(this_train))
+            print(this_train.arrival)
             print(datetime.today())
-            print(a_trains[i].stop_time_updates[j].arrival - datetime.today())
+            print(this_train.arrival - datetime.today())
